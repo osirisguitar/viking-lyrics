@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
-    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|IM+Fell+English+SC|Stint+Ultra+Condensed|Vollkorn+SC"
+    <meta name="description" content="The Artificial Viking Metal Minstrel is a recurrent neural network that listens to viking and power metal, and likes to make its own songs. It has
+    been listening to bands like Amon Amarth, Ensiferum, Enslaved, Grand Magus, Rhapsody, Unleashed and Manowar.">
+    <meta property="og:image" content="http://vikinglyrics.heavymetalcoder.com/images/viking_by_thompson46-d58200i.jpg">
+    <title>Artificial Viking Metal Minstrel</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn+SC"
   rel="stylesheet">
     <style>
-      /*font-family: 'Vollkorn SC', serif;
-      font-family: 'Cinzel Decorative', cursive;
-      font-family: 'IM Fell English SC', serif;
-      font-family: 'Stint Ultra Condensed', cursive;*/
-
       body {
         background-image: url('images/viking_by_thompson46-d58200i.jpg');
         background-size: cover;
         font-family: 'Vollkorn SC', serif;
+      }
+
+      h1 {
+        font-size: 2.5em;
       }
 
       #main {
@@ -29,15 +32,44 @@
 
       #settings {
         width: 33%;
+        max-width: 300px;
+        padding-right: 25px;
+      }
+
+      .lyrics {
+        padding-left: 25px;
+        border-left: 1px solid black;
       }
 
       .info {
-        font-size: 70%;
+        font-size: 80%;
+      }
+
+      input, button {
+        font-family: 'Vollkorn SC', serif;
+        font-size: 1em;
+      }
+
+      button {
+        border-radius: 0px;
+        padding: 10px;
+        margin-top: 10px;
       }
     </style>
     <script type="text/javascript">
+      function getRandomStart () {
+        let starts = ['Fight', 'Thor', 'Fire', 'Death', 'War'];
+
+        return starts[Math.floor(Math.random() * starts.length)];
+      }
+
+      function intialize () {
+        document.getElementById('start').value = getRandomStart();
+        loadLyrics();
+      }
+
       function loadLyrics () {
-        let temperature = parseInt(document.getElementById('temperature').value)/10;
+        let temperature = parseInt(document.getElementById('temperature').value)/100;
         return fetch('/lyrics?length=1000&temperature=' + temperature + '&start=' + document.getElementById('start').value || '', {
           method: 'GET',
           credentials: 'include'
@@ -49,7 +81,7 @@
         })
         .then(result => {
           let title = result.lyrics[0];
-          result.lyrics = result.lyrics.slice(1).map((line, index) => {
+          result.lyrics = result.lyrics.slice(1, -2).map((line, index) => {
             if (index % 3 === 2) {
               return line + '<br>';
             } else {
@@ -62,19 +94,31 @@
       }
     </script>
   </head>
-  <body onLoad="loadLyrics()">
+  <body onLoad="intialize()">
     <div id="main">
       <h1>Artificial Viking Metal Minstrel</h1>
       <div id="container">
         <div id="settings">
-          <h2>Mead level</h2>
+          <h3>Mead level</h3>
           <p class="info">More mead makes the minstrel more creative, innovating its own words and such</p>
-          <input type="number" min="1" max="10" id="temperature" value="7">
-          <h2>Song title start</h2>
-          <input type="text" id="start" value="Thor will fight">
+          <input type="number" min="1" max="100" id="temperature" value="50">%
+          <h3>Song title start</h3>
+          <p>
+          <input type="text" id="start"><br>
           <button onClick="loadLyrics()">Create new song</button>
+          </p>
+          <h3>About</h3>
+          <p class="info">
+            The Minstrel is a recurrent neural network that listens to viking and power metal, and likes to make its own songs. It has been listening to bands like Amon Amarth, Ensiferum, Enslaved, Grand Magus, Rhapsody, Unleashed and Manowar.
+          </p>
+          <p class="info">
+            The Minstrel was created by Anders Norrback Bornholm, also sometimes known as <a target="_blank" href="https://www.heavymetalcoder.com">Heavy Metal Coder</a> and <a target="_blank" href="https://www.osirisguitar.com">OSIRIS GUITAR</a>.
+          </p>
+          <p class="info">
+            Background image by <a target="_blank" href="http://www.thomaswievegg.com/">Thomas Wievegg</a>
+          </p>
         </div>
-        <div>
+        <div class="lyrics">
           <h2 id="title"></h2>
           <p id="lyrics">
           </p>
