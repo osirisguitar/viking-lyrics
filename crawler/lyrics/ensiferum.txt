@@ -1,4 +1,3 @@
-
 Ferrum Aeternum
 Iron
 The silence breaks the ground
@@ -482,7 +481,6 @@ As they shouted their last battle cries their destiny was to be dead
 Their future was in no one's hands like the prophet of the moon had said
 Those who travelled far away from home, they'll never return
 And those who crossed the seas of hope, they all will burn
-Intro
 Hero In A Dream
 A witch read from the palm of his hand
 that his life would turn into darkness
@@ -913,7 +911,7 @@ Those weakened, to the Darkest of Streams shall drown.
 And when heroes, those riverbanks will reach.
 The sounds of singing, across eternity shall echo.
 Calling our brothers, to journey, afar, beyond the Dark Stream.
-The Longest Journey (Heathen Throne Part II)
+The Longest Journey
 Could my ruin have come,
 My day of trouble have arrived,
 In these tuonele cabins
@@ -1073,14 +1071,6 @@ Crushed my dreams long gone.
 Burning leaves
 Dead branches reach to the sky,
 The flame within me is gone.
-Liekö enää päällä maan
-Ainuttakaan joka muistaa
-Lehdon tuon kauniin kaukaisen
-Jonne tie vie jokainen
-Kun kuolemaan vartija viimeinen
-Keskellä liekkien ikuinen
-Puu ja maailma ihmisten
-Niin loppuu aikamme
 I wonder if any longer someone walks the Earth who recalls
 That fair Grove afar, where all paths meet
 As the last of the guardians falls, ablaze the
@@ -1346,7 +1336,6 @@ Your screams can't make me feel pity or regret
 I only feel furious hatred
 With fire my dominion is gained
 So burn away and let my kind rule the world again
-Ahti
 At the time of sundown
 Nature bathes in colours
 In silence it waits

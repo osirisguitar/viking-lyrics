@@ -18,11 +18,17 @@ function saveAlbum (url) {
     });
 
     response.on('end', () => {
-      let jsdom = new JSDOM(result);
+      if (response.statusCode == 200) {
+        let jsdom = new JSDOM(result);
 
-      console.log(jsdom.window.document.querySelector('div.lyrics').textContent);
+        console.log(jsdom.window.document.querySelector('div.lyrics').textContent);
+      }
     });
   });
+
+  request.on('error', (e) => {
+    console.error('Oh no', e)
+  })
 
   request.end();
 }
