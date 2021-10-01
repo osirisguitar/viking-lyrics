@@ -1,3 +1,0 @@
-python scripts/preprocess.py --input_txt /data/viking2.txt --output_h5 /data/viking2.h5 --output_json /data/viking2.json
-
-th train.lua -input_h5 /data/viking2.h5 -input_json /data/viking2.json -gpu -1
