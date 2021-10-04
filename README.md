@@ -45,4 +45,5 @@ cd /root/torch-rnn
 
 python scripts/preprocess.py --input_txt /app/lyrics/viking2.txt --output_h5 /app/viking2.h5 --output_json /app/viking2.json
 
-th train.lua -input_h5 /app/viking2.h5 -input_json /app/viking2.json -gpu -1```
+th train.lua -input_h5 /app/viking2.h5 -input_json /app/viking2.json -gpu -1
+```
