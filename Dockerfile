@@ -1,8 +1,12 @@
 FROM crisbal/torch-rnn:base
 
-RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-RUN sudo apt-get install build-essential
-RUN sudo apt-get install -y --force-yes nodejs
+RUN apt-get update
+RUN apt-get install -y ca-certificates
+
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+RUN apt-get update
+RUN apt-get install build-essential
+RUN apt-get install -y --force-yes nodejs
 
 VOLUME /root/torch-rnn/cv
 
